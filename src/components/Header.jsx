@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="w-full bg-white shadow-md">
@@ -10,8 +12,8 @@ export default function Header() {
 
         <nav>
           <ul className="flex space-x-6">
-            <li>Home</li>
-            <li>Breeds</li>
+            <Link href={"/"}>Home</Link>
+            <Link href={"/breeds"}>Breeds</Link>
           </ul>
         </nav>
       </div>
