@@ -1,4 +1,7 @@
 import localFont from "next/font/local";
+
+import { Noto_Sans_KR } from "next/font/google";
+
 import "./globals.css";
 import Header from "@/components/common/Header";
 
@@ -8,6 +11,11 @@ const geistSans = localFont({
   weight: "100 900",
 });
 
+const noto = Noto_Sans_KR({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata = {
   title: "고양이 정보 사이트",
   description: "다양한 고양이 품종에 대한 정보를 제공하는 웹사이트",
@@ -15,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={noto.className}>
       <body className={`antialiased`}>
         <Header />
         {children}
