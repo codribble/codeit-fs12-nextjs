@@ -16,7 +16,10 @@ const geistSans = localFont({
 });
 
 export const metadata = {
-  title: "고양이 정보 사이트",
+  title: {
+    template: "%s | 고양이 정보 사이트",
+    default: "고양이 정보 사이트",
+  },
   description: "다양한 고양이 품종에 대한 정보를 제공하는 웹사이트",
 };
 
