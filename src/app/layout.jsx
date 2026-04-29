@@ -5,7 +5,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 
-const geistSans = localFont({
+export const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
@@ -14,6 +14,7 @@ const geistSans = localFont({
 const noto = Noto_Sans_KR({
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata = {
@@ -23,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className={noto.className}>
+    <html lang="ko" className={`${noto.className} ${geistSans.variable}`}>
       <body className={`antialiased`}>
         <Header />
         {children}
