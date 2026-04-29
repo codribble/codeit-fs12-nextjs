@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -25,10 +26,11 @@ export default function CatCard({
             TODO: 실습: 이미지 컴포넌트로 변경하세요 
             fill 속성을 사용하세요.
         */}
-        <img
+        <Image
           src={imageUrl || "/placeholder-cat.jpg"}
+          fill
           alt={name}
-          className="object-cover w-full h-full"
+          className="object-cover"
         />
       </div>
       <div className="p-4">

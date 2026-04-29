@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 /**
  * 고양이 상세 정보 컴포넌트
  * @param {Object} props
@@ -17,10 +19,11 @@ export default function CatDetail({ cat }) {
             TODO: 실습: 이미지 컴포넌트로 변경하세요 
             fill 속성을 사용하세요.
         */}
-        <img
+        <Image
           src={cat.url}
+          fill
           alt={cat.breeds[0].name}
-          className="w-full h-full object-cover"
+          className="object-cover"
         />
       </div>
 
