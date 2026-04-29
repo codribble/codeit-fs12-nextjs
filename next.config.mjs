@@ -5,6 +5,10 @@ const nextConfig = {
       {
         hostname: "cdn2.thecatapi.com",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
     ],
   },
 };
