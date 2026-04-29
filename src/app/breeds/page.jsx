@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 async function getCatBreeds() {
   const res = await fetch(
     `https://api.thecatapi.com/v1/breeds?api_key=${process.env.CAT_API_KEY}&limit=8`,
@@ -10,7 +12,7 @@ async function getCatBreeds() {
   return res.json();
 }
 
-export default async function CatBreeds() {
+const CatBreeds = async () => {
   const breeds = await getCatBreeds();
 
   return (
@@ -20,8 +22,9 @@ export default async function CatBreeds() {
       <main className="w-full max-w-6xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {breeds.map((breed) => (
-            <div
+            <Link
               key={breed.id}
+              href={`/breeds/${breed.id}`}
               className="flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="relative h-64 bg-lime-400">
@@ -34,10 +37,12 @@ export default async function CatBreeds() {
               <div className="p-4">
                 <h2 className="text-lg font-semibold">{breed.name}</h2>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </main>
     </div>
   );
-}
+};
+
+export default CatBreeds;
