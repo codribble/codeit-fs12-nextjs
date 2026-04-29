@@ -5,6 +5,8 @@ import CatCardList from "@/components/ui/CatCardList";
 import Image from "next/image";
 import staticCat from "../../public/sampleCat.jpg";
 
+export const revalidate = 5; // 5초로 설정
+
 export default async function Home() {
   console.log("Home");
   const cats = await getCats();
